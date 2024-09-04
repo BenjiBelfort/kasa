@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer>
         <img src={logo} alt="logo Kasa" /> 
-        <p>ceci est mon footer</p>
+        <p>&#169; 2024 Kasa. Tous droits réservés</p>
     </footer>
   )
 }
