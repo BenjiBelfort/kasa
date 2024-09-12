@@ -14,6 +14,7 @@ const Home = () => {
   return (
     <div>
       <Banner />
+      <div className="home-grid">
       {properties.map(property => (
         <PropertyCard
           key={property.id}
@@ -22,7 +23,7 @@ const Home = () => {
           cover={property.cover}
         />
       ))}
-
+      </div>
     </div>
   );
 }

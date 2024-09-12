@@ -1,0 +1,17 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    img {
+        width: 145px;
+    }
+}
+
+ul {
+    display: flex;
+    text-transform: uppercase;
+    li {
+        margin-left: 26px;
+    }
+}

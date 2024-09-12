@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Collapse from '../components/Collapse';
-
+import Carousel from '../components/Carousel';
+import Tags from '../components/Tags';
+import Host from '../components/Host';
+import Rating from '../components/Rating';
 import data from '../datas/base.json';
 
 const Fiche = () => {
-
   const { id } = useParams();
   const [property, setProperties] = useState(null);
 
@@ -15,36 +17,40 @@ const Fiche = () => {
   }, [id]);
 
   if (!property) {
-    return <p>Chargement...</p>; // Affiche un message de chargement si la propriété n'est pas encore trouvée
-}
-
+    return <p>Chargement...</p>;
+  }
 
   return (
     <div>
-        <img src={property.cover} alt={property.title} />
-        <h2>{property.title}</h2>
-        <p>{property.location}</p>
+      {/* Carrousel d'images */}
+      <Carousel pictures={property.pictures} title={property.title} />
 
-        <div className="tags">
-          {property.tags.map((tag, index) => (
-            <span key={index} className="tag">{tag}</span>
-          ))}
-        </div>
+      <h2>{property.title}</h2>
+      <p>{property.location}</p>
 
-        <Collapse
-          title="Description"
-        >
-          <p>{property.description}</p>
-        </Collapse>
-        <Collapse title="Équipements">
-          <ul>
-            {property.equipments.map((equipment, index) => (
+      {/* Tags */}
+      <Tags tags={property.tags} />
+
+      {/* Host */}
+      <Host host={property.host} />
+
+      {/* Rating */}
+      <Rating rating={property.rating} />
+
+      {/* Collapse pour la description et les équipements */}
+      <Collapse title="Description">
+        <p>{property.description}</p>
+      </Collapse>
+      
+      <Collapse title="Équipements">
+        <ul>
+          {property.equipments.map((equipment, index) => (
             <li key={index}>{equipment}</li>
-            ))}
-          </ul>
-        </Collapse>
+          ))}
+        </ul>
+      </Collapse>
     </div>
-  )
-}
+  );
+};
 
 export default Fiche;
