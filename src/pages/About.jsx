@@ -1,5 +1,5 @@
-import Banner from "../components/Banner";
-import Collapse from "../components/Collapse";
+import Banner from "../components/Banner/Banner";
+import Collapse from "../components/Collapse/Collapse";
 
 const About = () => {
   return (

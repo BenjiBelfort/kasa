@@ -1,0 +1,57 @@
+@import '../../styles/global.scss';
+
+.collapse {
+    color: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin-bottom: 1rem;
+
+    .collapse-header {
+        background-color: $primary-color;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        width: 100%;
+        background-color: $primary-color;
+        color: white;
+        border: none;
+        cursor: pointer;
+        text-align: left;
+        font-size: 1rem;
+        border-radius: 0.5rem;
+
+        .chevron {
+            width: 10px;
+            height: 10px;
+            border: 2px solid white;
+            border-left: none;
+            border-bottom: none;
+            transform: rotate(-45deg);
+            transform-origin: center;
+            transition: transform 0.3s ease;
+        }
+
+        &.open .chevron {
+            transform: rotate(-225deg);
+        }
+    }
+
+    .collapse-content {
+        padding: 1rem;
+        font-size: 0.75rem;
+        line-height: 1.4;
+        color: black;
+        background-color: #F6F6F673;
+        border-radius: 0 0 0.5rem 0.5rem;
+    }
+
+    ul {
+        display: block;
+        text-transform: unset;
+    }
+
+    li {
+        margin: 0;
+    }
+}

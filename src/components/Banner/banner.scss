@@ -1,0 +1,38 @@
+@mixin banner-frame {
+    width: 100%;
+    height: 7rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 1rem;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.home-banner {
+    @include banner-frame;
+
+    img {
+        filter: brightness(40%);
+    }
+
+    h1 {
+        position: absolute;
+        top: 50%;
+        left: 1rem; /* Garde le texte à 1rem du bord gauche */
+        transform: translateY(-50%); /* Centre verticalement sans affecter la position horizontale */
+        color: white;
+        font-size: 1.2rem;
+        font-weight: bold;
+        line-height: 1.2;
+        width: calc(100% - 2rem); /* Assure que le texte s'adapte avec 1rem de chaque côté */
+        text-align: left; /* Centre le texte à l'intérieur du bloc */
+    }
+}
+
+.about-banner {
+    @include banner-frame;
+}

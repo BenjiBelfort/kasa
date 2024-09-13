@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import Collapse from '../components/Collapse';
-import Carousel from '../components/Carousel';
-import Tags from '../components/Tags';
-import Host from '../components/Host';
-import Rating from '../components/Rating';
+import Collapse from '../components/Collapse/Collapse';
+import Carrousel from '../components/Carrousel/Carrousel';
+import Tags from '../components/Tags/Tags';
+import Host from '../components/Host/Host';
+import Rating from '../components/Rating/Rating';
 import data from '../datas/base.json';
+import '../styles/fichelogement.scss';
 
 const Fiche = () => {
   const { id } = useParams();
@@ -20,24 +21,22 @@ const Fiche = () => {
     return <p>Chargement...</p>;
   }
 
+  const ratingNumber = parseInt(property.rating, 10);
+
   return (
     <div>
-      {/* Carrousel d'images */}
-      <Carousel pictures={property.pictures} title={property.title} />
+      <Carrousel pictures={property.pictures} title={property.title} />
 
       <h2>{property.title}</h2>
       <p>{property.location}</p>
 
-      {/* Tags */}
       <Tags tags={property.tags} />
 
-      {/* Host */}
-      <Host host={property.host} />
+      <div className="rating-host-wrapper">
+        <Rating rating={ratingNumber} /> 
+        <Host host={property.host} />
+      </div>
 
-      {/* Rating */}
-      <Rating rating={property.rating} />
-
-      {/* Collapse pour la description et les équipements */}
       <Collapse title="Description">
         <p>{property.description}</p>
       </Collapse>

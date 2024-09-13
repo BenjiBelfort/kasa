@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import Banner from "../components/Banner";
-import PropertyCard from "../components/PropertyCard";
+import Banner from "../components/Banner/Banner";
+import PropertyCard from "../components/PropertyCard/PropertyCard";
 import data from '../datas/base.json';
 
 const Home = () => {

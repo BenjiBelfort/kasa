@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-
+import './propertycard.scss'
 
 const PropertyCard = ({ id, title, cover }) => {
     return (
         <Link to={`/fiche-immobiliere/${id}`}>
             <div className="property-card">
                 <img src={cover} alt={title} />
-                <h3>{title}</h3>
+                <h2>{title}</h2>
             </div>
         </Link>
     );

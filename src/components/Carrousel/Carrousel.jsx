@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
+import './carrousel.scss'
 
-const Carousel = ({ pictures, title }) => {
+const Carrousel = ({ pictures, title }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const nextImage = () => {
@@ -17,11 +18,11 @@ const Carousel = ({ pictures, title }) => {
   };
 
   return (
-    <div className="carousel">
+    <div className="carrousel">
       {pictures.length > 1 && (
         <>
-          <button onClick={prevImage}>←</button>
-          <button onClick={nextImage}>→</button>
+          <div className="chevron-button chevron-left" onClick={prevImage} />
+          <div className="chevron-button chevron-right" onClick={nextImage} />
           <div className="compteur-images">
             {currentImageIndex + 1}/{pictures.length}
           </div>
@@ -32,9 +33,9 @@ const Carousel = ({ pictures, title }) => {
   );
 };
 
-Carousel.propTypes = {
+Carrousel.propTypes = {
   pictures: PropTypes.arrayOf(PropTypes.string).isRequired,
   title: PropTypes.string.isRequired,
 };
 
-export default Carousel;
+export default Carrousel;
