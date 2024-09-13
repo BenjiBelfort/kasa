@@ -22,17 +22,40 @@
     h1 {
         position: absolute;
         top: 50%;
-        left: 1rem; /* Garde le texte à 1rem du bord gauche */
-        transform: translateY(-50%); /* Centre verticalement sans affecter la position horizontale */
+        left: 1rem;
+        transform: translateY(-50%);
         color: white;
         font-size: 1.2rem;
         font-weight: bold;
         line-height: 1.2;
-        width: calc(100% - 2rem); /* Assure que le texte s'adapte avec 1rem de chaque côté */
-        text-align: left; /* Centre le texte à l'intérieur du bloc */
+        width: calc(100% - 2rem);
+        text-align: left;
     }
 }
 
 .about-banner {
     @include banner-frame;
 }
+
+@media (min-width: 800px) {
+    .home-banner,
+    .about-banner {
+      height: 14rem;
+      border-radius: 1rem;
+      margin-bottom: 2rem;
+    }
+  
+    .home-banner {
+        h1 {
+            font-size: 2rem;
+            left: 2rem;
+            text-align: center;
+            white-space: nowrap;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        br {
+            display: none;
+        }
+    }
+  }

@@ -7,6 +7,7 @@ import Host from '../components/Host/Host';
 import Rating from '../components/Rating/Rating';
 import data from '../datas/base.json';
 import '../styles/fichelogement.scss';
+import Erreur from './Erreur';
 
 const Fiche = () => {
   const { id } = useParams();
@@ -18,7 +19,7 @@ const Fiche = () => {
   }, [id]);
 
   if (!property) {
-    return <p>Chargement...</p>;
+    return <Erreur />;
   }
 
   const ratingNumber = parseInt(property.rating, 10);

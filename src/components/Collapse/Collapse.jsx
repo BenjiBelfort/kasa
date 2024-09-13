@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import chevronImg from '../../assets/chevron-collapse.png'
 import './collapse.scss';
 
 const Collapse = ({ title, children }) => {
@@ -16,7 +17,11 @@ const Collapse = ({ title, children }) => {
         onClick={toggleCollapse}
       >
         {title}
-        <span className="chevron"></span>
+        <img
+          className={`chevron ${isOpen ? 'open' : ''}`}
+          src={chevronImg}
+          alt="Chevron icon"
+        />
       </button>
       {isOpen && <div className="collapse-content">{children}</div>}
     </div>

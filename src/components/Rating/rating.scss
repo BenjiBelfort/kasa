@@ -5,15 +5,9 @@
     font-size: 1.5rem;
 
     .star {
+        width: 14px;
+        height: auto;
         margin: 0 0.2rem;
-    }
-
-    .full-star {
-        color: $primary-color;
-    }
-
-    .empty-star {
-        color: #E3E3E3;
     }
 }
 

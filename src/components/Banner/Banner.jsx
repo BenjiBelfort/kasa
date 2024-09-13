@@ -7,7 +7,7 @@ const bannerConfig = {
     '/': {
         src: homeImage,
         alt: 'Vue sue la côte',
-        text: <>Chez vous,<br />partout et ailleurs</>
+        text: <>Chez vous,<br /> partout et ailleurs</>
     },
     '/a-propos': {
         src: aboutImage,

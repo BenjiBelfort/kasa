@@ -22,20 +22,16 @@
         border-radius: 0.5rem;
 
         .chevron {
-            width: 10px;
-            height: 10px;
-            border: 2px solid white;
-            border-left: none;
-            border-bottom: none;
-            transform: rotate(-45deg);
-            transform-origin: center;
+            width: 16px;
+            height: auto;
             transition: transform 0.3s ease;
         }
 
         &.open .chevron {
-            transform: rotate(-225deg);
+            transform: rotate(-180deg);
         }
     }
+
 
     .collapse-content {
         padding: 1rem;
@@ -44,7 +40,9 @@
         color: black;
         background-color: #F6F6F673;
         border-radius: 0 0 0.5rem 0.5rem;
+        animation: animation-collapse 1s ease-in-out;
     }
+
 
     ul {
         display: block;
@@ -53,5 +51,22 @@
 
     li {
         margin: 0;
+    }
+}
+
+@keyframes animation-collapse {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
     }
 }

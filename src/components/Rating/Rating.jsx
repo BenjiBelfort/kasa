@@ -1,18 +1,18 @@
 import PropTypes from 'prop-types';
 import './rating.scss';
+import fullStarImg from '../../assets/full-star.png';
+import emptyStarImg from '../../assets/empty-star.png';
 
 const Rating = ({ rating }) => {
   const totalStars = 5;
-  const fullStar = '★';
-  const emptyStar = '★';
 
   return (
     <div className="rating">
       {Array.from({ length: totalStars }, (_, index) =>
         index < rating ? (
-          <span key={index} className="star full-star">{fullStar}</span>
+          <img key={index} src={fullStarImg} alt="full star" className="star full-star" />
         ) : (
-          <span key={index} className="star empty-star">{emptyStar}</span>
+          <img key={index} src={emptyStarImg} alt="empty star" className="star empty-star" />
         )
       )}
     </div>
