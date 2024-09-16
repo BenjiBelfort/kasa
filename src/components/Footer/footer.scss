@@ -13,3 +13,12 @@ footer {
         margin: 25px;
     }
 }
+
+@media (min-width: 800px) {
+    footer {
+        p {
+            font-size: 24px;
+            max-width: 100%;
+        }
+    }
+}

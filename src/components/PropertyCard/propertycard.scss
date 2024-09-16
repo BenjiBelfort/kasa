@@ -4,7 +4,6 @@
     border-radius: 0.5rem;
     overflow: hidden;
     position: relative;
-    margin-bottom: 1rem;
 
     img {
         width: 100%;
@@ -47,3 +46,9 @@
         text-align: left;
     }
 }
+
+@media (min-width: 800px) {
+    .property-card {
+        height: 21rem;
+    }
+} 

@@ -1,0 +1,23 @@
+
+
+.home-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+
+@media (min-width: 800px) {
+    .home-container {
+        width: calc(100% - 4rem);
+        height: auto;
+        border-radius: 1rem;
+        background-color: #F6F6F6;
+        padding: 2rem;
+    }
+
+    .home-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2rem;
+    }
+}

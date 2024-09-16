@@ -53,16 +53,11 @@ a {
 // Styles globaux
 
 $primary-color: #FF6060;
-$font-size-base: 16px;
-$spacing-unit: 8px;
 
 body {
   font-family: "Montserrat", sans-serif;
 }
 
-.main-contener {
-  margin: 20px;
-}
 
 h2 {
   color: $primary-color;
@@ -71,11 +66,3 @@ h2 {
   font-size: 1.2rem;
 }
 
-@media (min-width: 800px) {
-  .main-contener {
-    max-width: 1240px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 40px;
-  }
-}
