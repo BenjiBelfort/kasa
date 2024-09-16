@@ -26,6 +26,7 @@
         transform: translateY(-50%);
         transform-origin: center;
         z-index: 1;
+        filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
     }
 
     .chevron-left {
@@ -51,11 +52,19 @@
         font-size: 1rem;
         z-index: 2;
         display: none;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
     }
 
     @media (min-width: 800px) {
         .compteur-images {
             display: block;
         }
+    }
+}
+
+@media (min-width: 800px) {
+    .carrousel {
+        height: 26rem;
+        border-radius: 1rem;
     }
 }

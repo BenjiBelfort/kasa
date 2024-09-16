@@ -5,8 +5,10 @@
 }
   
 .main-container {
+    display: flex;
+    flex-direction: column;
     flex-grow: 1;
-    margin : 20px auto;
+    margin : 0 auto;
     width: calc(100% - 40px);
 }
   

@@ -4,3 +4,33 @@
     align-items: center;
     margin-bottom: 1rem;
 }
+
+.property-location {
+    font-size: 14px;
+}
+
+@media (min-width: 800px) {
+    .property-title {
+        font-size: 2.25rem;
+    }
+
+    .property-location {
+        font-size: 18px;
+    }
+
+    .rating-host-wrapper {
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+
+    .fiche-collapse-container {
+        display: flex;
+        gap: 76px;
+    }
+
+    .fiche-info-container {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+    }
+}

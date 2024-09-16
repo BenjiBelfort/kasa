@@ -7,12 +7,19 @@
     align-items: center;
     justify-content: flex-end;
     gap: 0.5rem;
+    @media (min-width: 800px) {
+        gap: 1rem;
+    }
   
     .host-name {
         color: $primary-color;
         margin: 0;
         line-height: 1.2;
         text-align: right;
+        font-size: 12px;
+        @media (min-width: 800px) {
+            font-size: 18px;
+        }
     }
   
     .host-picture {
@@ -20,5 +27,9 @@
         height: 40px;
         object-fit: cover;
         border-radius: 50%;
+        @media (min-width: 800px) {
+            width: 64px;
+            height: 64px;
+        }
     }
 }

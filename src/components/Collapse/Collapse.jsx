@@ -1,14 +1,24 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import chevronImg from '../../assets/chevron-collapse.png'
+import chevronImg from '../../assets/chevron-collapse.png';
 import './collapse.scss';
 
 const Collapse = ({ title, children }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [height, setHeight] = useState('0px');
+  const contentRef = useRef(null);
 
   const toggleCollapse = () => {
     setIsOpen(!isOpen);
   };
+
+  useEffect(() => {
+    if (isOpen) {
+      setHeight(`${contentRef.current.scrollHeight}px`);
+    } else {
+      setHeight('0px');
+    }
+  }, [isOpen]);
 
   return (
     <div className="collapse">
@@ -23,7 +33,17 @@ const Collapse = ({ title, children }) => {
           alt="Chevron icon"
         />
       </button>
-      {isOpen && <div className="collapse-content">{children}</div>}
+      <div
+        ref={contentRef}
+        className="collapse-content"
+        style={{
+          maxHeight: height,
+        }}
+      >
+        <div className="collapse-inner">
+          {children}
+        </div>
+      </div>
     </div>
   );
 };

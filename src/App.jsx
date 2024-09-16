@@ -8,10 +8,10 @@ import './styles/app.scss';
 function App() {
   return (
     <div className="app-container">
-      <div className="main-container">
-        <Header />
-        <AppRouter />
-      </div>
+      <Header />
+        <div className="main-container">
+          <AppRouter />
+        </div>
       <Footer />
     </div>
   );

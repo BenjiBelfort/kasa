@@ -27,28 +27,31 @@ const Fiche = () => {
   return (
     <div>
       <Carrousel pictures={property.pictures} title={property.title} />
+        <div className="fiche-info-container">
+          <div className="fiche-left">
+            <h2 className='property-title'>{property.title}</h2>
+            <p className='property-location'>{property.location}</p>
 
-      <h2>{property.title}</h2>
-      <p>{property.location}</p>
-
-      <Tags tags={property.tags} />
-
-      <div className="rating-host-wrapper">
-        <Rating rating={ratingNumber} /> 
-        <Host host={property.host} />
+            <Tags tags={property.tags} />
+          </div>
+          <div className="rating-host-wrapper">
+            <Rating rating={ratingNumber} /> 
+            <Host host={property.host} />
+          </div>
+        </div>
+      <div className="fiche-collapse-container">
+        <Collapse title="Description">
+          <p>{property.description}</p>
+        </Collapse>
+        
+        <Collapse title="Équipements">
+          <ul>
+            {property.equipments.map((equipment, index) => (
+              <li key={index}>{equipment}</li>
+            ))}
+          </ul>
+        </Collapse>
       </div>
-
-      <Collapse title="Description">
-        <p>{property.description}</p>
-      </Collapse>
-      
-      <Collapse title="Équipements">
-        <ul>
-          {property.equipments.map((equipment, index) => (
-            <li key={index}>{equipment}</li>
-          ))}
-        </ul>
-      </Collapse>
     </div>
   );
 };

@@ -1,15 +1,36 @@
+@import '../styles/global.scss';
+
 .error-container {
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     align-items: center;
+    flex-grow: 1;
+    text-align: center;
+    padding: 3rem;
 }
 
-.error-content {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    text-align: center;
+.main-404 {
+    font-size: 6rem;
+    font-weight: bold;
+}
+
+.p-404 {
+    color: $primary-color;
+    line-height: 1.5;
+}
+
+.link-404 {
+    font-size: small;
+    text-decoration: underline;
+}
+
+@media (min-width: 800px) {
+    .main-404 {
+        font-size: 10rem;
+    }
+    
+    .p-404 {
+        font-size: 1.5rem;
+    }
 }
