@@ -26,6 +26,7 @@
         z-index: 1;
         @media (min-width: 800px) {
             font-size: 24px;
+            padding: 0.75rem 1rem;
         }
 
         .chevron {
@@ -45,11 +46,11 @@
         transition: max-height 0.3s ease;
         background-color: #F6F6F6;
         border-radius: 0 0 0.5rem 0.5rem;
+        transform: translateY(-5px);
     }
 
     .collapse-inner {
-        padding: 1.6rem 1rem 1rem 1rem;
-        margin-top: -0.75rem;
+        padding: 1rem;
         font-size: 12px;
         line-height: 1.4;
         color: black;
